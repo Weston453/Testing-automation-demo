@@ -15,6 +15,17 @@ module.exports = async function search(driver, searchTerm) {
     // the text in that element as a string
     let resultsText = await driver.findElement(By.id('res')).getText()
 
+    
+    // console.log(resultsText)
     // We make our restults lower case and then expect it to contain our original search term
     expect(resultsText.toLowerCase()).toContain(searchTerm.toLowerCase())
+
+    await driver.sleep(5000)
+
+    // await driver.findElement(By.name('q')).clear()
+
+    // await driver.findElement(By.name('q')).sendKeys('Muck-duck\n')
+
+    // await driver.slepp(4000)
+
 }
